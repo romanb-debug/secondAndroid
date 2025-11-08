@@ -13,9 +13,6 @@ class ActivityA : ComponentActivity() {
     private lateinit var root: View
     private lateinit var getColor: EditText
 
-    companion object {
-        private const val KEY_COLOR = "key_color"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +21,6 @@ class ActivityA : ComponentActivity() {
         getColor = findViewById(R.id.getColor)
         val buttonGen: Button = findViewById(R.id.buttonGenerate)
         val buttonOpenB: Button = findViewById(R.id.buttonOpenB)
-
-        savedInstanceState?.getString(KEY_COLOR)?.let {
-            getColor.setText(it)
-        }
 
         buttonGen.setOnClickListener {
             val hex = generateHexColor()
@@ -43,11 +36,6 @@ class ActivityA : ComponentActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent)
         }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(KEY_COLOR, getColor.text.toString())
     }
 
     override fun onNewIntent(intent: Intent?) {
