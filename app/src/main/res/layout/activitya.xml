@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF5858"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/getColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="#RRGGBB"
+        android:hint="#RRGGBB"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/buttonGenerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Color"
+        app:layout_constraintTop_toBottomOf="@id/getColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/buttonOpenB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Activity B"
+        app:layout_constraintTop_toBottomOf="@id/buttonGenerate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
