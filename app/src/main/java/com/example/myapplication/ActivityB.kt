@@ -1,11 +1,11 @@
 package com.example.myapplication
 
-//import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.core.graphics.toColorInt
+import com.example.myapplication.Constants.COLOR
 
 class ActivityB : ComponentActivity() {
 
@@ -19,7 +19,7 @@ class ActivityB : ComponentActivity() {
         val buttonOpenC: Button = findViewById(R.id.buttonOpenC)
 
         if (savedInstanceState == null) {
-            intent?.getStringExtra("color")?.let { hex ->
+            intent?.getStringExtra(COLOR)?.let { hex ->
                 if (isValidHex(hex)) setBackgroundHex(hex)
             }
         }

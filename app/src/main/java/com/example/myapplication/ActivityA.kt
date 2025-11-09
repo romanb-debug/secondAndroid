@@ -7,12 +7,12 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.ComponentActivity
 import java.util.*
+import com.example.myapplication.Constants.COLOR
 
 class ActivityA : ComponentActivity() {
 
     private lateinit var root: View
     private lateinit var getColor: EditText
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class ActivityA : ComponentActivity() {
             val intent = Intent(this, ActivityB::class.java)
             val colorText = getColor.text.toString().trim()
             if (isValidHex(colorText)) {
-                intent.putExtra("color", colorText)
+                intent.putExtra(COLOR, colorText)
             }
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent)
